@@ -1,0 +1,14 @@
+.border-bottom{
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    background-color: #fff;
+    background-clip: padding-box;
+    outline: 0;
+    margin-top: -15px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom: 2px solid black !important;
+    line-height: 1.5;
+}
