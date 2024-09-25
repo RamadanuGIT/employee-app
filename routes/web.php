@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\InvoiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,12 +18,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
+// Route::get('/',[LoginController::class,'index'])->name('login');
 Route::get('/login',[LoginController::class,'index'])->name('login');
-Route::post('/login',[LoginController::class, 'processLogin'])->name('process.login');
-Route::get('/logout',[LoginController::class,'logout'])->name('proccess.logout');
+Route::post('/login-proccess',[LoginController::class, 'processLogin'])->name('process.login');
+Route::post('/logout',[LoginController::class, 'logout'])->name('process.logout');
+
+
+Route::controller(InvoiceController::class)->group(function () {
+    Route::get('/invoice', 'index')->name('invoice');
+    Route::get('/create', 'create')->name('create.invoice');
+    Route::post('/store', 'store')->name('invoice.store');
+});
 
 Route::get('/dashboard',[DashboardController::class,'index'])->name('admin.dashboard');
 

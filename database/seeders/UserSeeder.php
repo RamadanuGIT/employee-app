@@ -21,10 +21,10 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('123'),
             ],
             [
-                'name' => 'user',
-                'email'=> 'user2@example.com',
-                'password'=> bcrypt('123'),
-            ]
+                'name' => 'arif',
+                'email'=> 'arif@example.com',
+                'password'=> bcrypt('123arifabc'),
+            ],
         ];
         DB::table('users')->insert($user);
     }

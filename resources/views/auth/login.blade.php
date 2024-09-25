@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Pages / Login - NiceAdmin Bootstrap Template</title>
+    <title>BKI</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -27,6 +27,7 @@
     <link href="{{ asset('template') }}/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
     <link href="{{ asset('template') }}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="{{ asset('template') }}/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('template') }}/assets/css/style.css" rel="stylesheet">
@@ -52,16 +53,16 @@
                         <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
                             <div class="d-flex justify-content-center py-4">
-                                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                                    <img src="{{ asset('template') }}/assets/img/logo.png" alt="">
-                                    <span class="d-none d-lg-block">NiceAdmin</span>
+                                <a href="index.html" class="d-flex align-items-center">
+                                    <img src="{{ asset('icon') }}/logo.png" alt="" class="logo">
+                                    <span class="d-none d-lg-block"></span>
                                 </a>
                             </div><!-- End Logo -->
 
 
                             <div class="card mb-3">
 
-                                <div class="card-body mt-3">
+                                <div class="card-body mt-2">
                                     @if (session('error'))
                                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                             {{session('error')}}
@@ -139,6 +140,7 @@
     <script src="{{ asset('template') }}/assets/vendor/simple-datatables/simple-datatables.js"></script>
     <script src="{{ asset('template') }}/assets/vendor/tinymce/tinymce.min.js"></script>
     <script src="{{ asset('template') }}/assets/vendor/php-email-form/validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- Template Main JS File -->
     <script src="{{ asset('template') }}/assets/js/main.js"></script>
