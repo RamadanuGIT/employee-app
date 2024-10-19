@@ -22,8 +22,15 @@
         </ul>
         <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav" nav-content="" collapse="" show="" style="">
           <li>
-            <a href="{{route('employee')}}" class="{{Route::is('employe*') ? 'active':''}}">
+            <a href="{{route('invoice')}}" class="{{Route::is('employe*') ? 'active':''}}">
               <i class="bi bi-circle"></i><span>Performa Invoice</span>
+            </a>
+          </li>
+        </ul>
+        <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav" nav-content="" collapse="" show="" style="">
+          <li>
+            <a href="{{route('invoice')}}" class="{{Route::is('employe*') ? 'active':''}}">
+              <i class="bi bi-circle"></i><span>Project</span>
             </a>
           </li>
         </ul>

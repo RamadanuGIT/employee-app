@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Performance Invoice</h5>
                     <div>
-                        <a href="{{ route('create.invoice   w   3') }}" class="btn btn-primary">Create</a>
+                        <a href="{{ route('create.invoice') }}" class="btn btn-primary">Create</a>
                     </div>
                     <table class="table datatable">
                         <thead>
@@ -29,7 +29,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($invoice as $inv)
+                            @foreach ($invoices as $inv)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $inv->no_invoice }}</td>
@@ -40,7 +40,8 @@
                                     <td>{{ $inv->penerbitan }}</td>
                                     <td>{{ $inv->spi }}</td>
                                     <td>{{ $inv->pelunasan }}</td>
-                                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered{{$emp->id}}">
+                                    <td>
+                                    <button type="button" class="btn btn-sm btn-primary gap-3" data-bs-toggle="modal" data-bs-target="#verticalycentered{{$inv->id}}">
                                             <i class="fas fa-eye"></i>
                                           </button>
                                           <button class="btn btn-sm btn-danger delete-btn" data-id="{{ $inv->id }}">
@@ -62,7 +63,7 @@
 
     <!-- Vertically centered Modal -->
 
-    @foreach ($invoice as $inv)
+    @foreach ($invoices as $inv)
     <div class="modal fade" id="verticalycentered{{$inv->id}}" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -70,7 +71,7 @@
                     <h5 class="modal-title">Vertically Centered</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form method="post" action="{{route('employee.update',$inv->id)}}" enctype="multipart/form-data">
+                <form method="post" action="{{route('invoice.update',$inv->id)}}" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="row">
@@ -139,7 +140,7 @@
             document.querySelectorAll('.delete-btn').forEach(button => {
                 button.addEventListener('click', function() {
                     const dataId = this.getAttribute('data-id');
-                    const deleteUrl = `{{ route('employee.delete', ':id') }}`
+                    const deleteUrl = `{{ route('invoice.delete', ':id') }}`
                         .replace(':id', dataId);
 
                     Swal.fire({
