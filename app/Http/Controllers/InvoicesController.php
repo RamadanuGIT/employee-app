@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Invoice;
+use App\Models\Invoices;
 use Illuminate\Http\Request;
 
-class InvoiceController extends Controller
+class InvoicesController extends Controller
 {
     public function index()
     {
         return view('dashboard.agenda.invoice',[
             'title' => 'Performance Invoice',
-            'invoice' => Invoice::all()
+            'invoices' => Invoices::all()
         ]);
     }
 
@@ -35,13 +35,13 @@ class InvoiceController extends Controller
             'spi' => 'required',
             'pelunasan' => 'required',
         ]);
-        Invoice::create($data);
-        return redirect()->route('dashboard.agenda.invoice')->with('success', 'sukses membuat invoice');
+        Invoices::create($data);
+        return redirect()->route('invoice')->with('success', 'sukses membuat invoice');
     }
 
     public function update(Request $request, $id)
     {
-        $inv = Invoice::findOrFail($id);
+        $inv = Invoices::findOrFail($id);
         $data = $request->validate([
             'no_invoice' => 'required',
             'tanggal' => 'required',
@@ -60,7 +60,7 @@ class InvoiceController extends Controller
 
     public function destroy($id)
     {
-        $inv = Invoice::findOrFail($id);
+        $inv = Invoices::findOrFail($id);
         $inv->delete();
         return redirect()->back()->with('success', 'Delete Performance Invoice');
     }
